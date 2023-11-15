@@ -10,44 +10,21 @@ import java.util.Date;
  *
  * @author lmene
  */
-public class Usuario {
+public class Usuario extends Pessoa {
     
-    private int id;
-    private String nome;
-    private String senha;
-    private String nivelAcesso;
-    private char sexo;
-    private Date dtNascimento;
-    private String telefone;
-    private String email;
-    private String rg;
-    private String endereco;
+    
+    protected String senha;
+    protected String nivelAcesso;
 
-    public Usuario(int id, String nome, String senha, String nivelAcesso, char sexo, Date dtNascimento, String telefone, String email, String rg, String endereco) {
-        this.id = id;
-        this.nome = nome;
+    public Usuario( int id, String nome, String senha) {
+        super(id, nome);
+        this.senha = senha;
+    }
+
+    public Usuario(String senha, String nivelAcesso, int id, String nome, char sexo, String dtNascimento, String telefone, String email, String rg) {
+        super(id, nome, sexo, dtNascimento, telefone, email, rg);
         this.senha = senha;
         this.nivelAcesso = nivelAcesso;
-        this.sexo = sexo;
-        this.dtNascimento = dtNascimento;
-        this.telefone = telefone;
-        this.email = email;
-        this.rg = rg;
-        this.endereco = endereco;
-    }
-
-    public Usuario(int id, String nome, String senha) {
-        this.id = id;
-        this.nome = nome;
-        this.senha = senha;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getSenha() {
@@ -65,54 +42,11 @@ public class Usuario {
     public void setNivelAcesso(String nivelAcesso) {
         this.nivelAcesso = nivelAcesso;
     }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-
-    public Date getDtNascimento() {
-        return dtNascimento;
-    }
-
-    public void setDtNascimento(Date dtNascimento) {
-        this.dtNascimento = dtNascimento;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
     
+
     
-}
+
+  
+    }
+
+   

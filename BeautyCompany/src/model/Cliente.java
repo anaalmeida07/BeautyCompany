@@ -10,74 +10,43 @@ import java.util.Date;
  *
  * @author lmene
  */
-public class Cliente {
+public class Cliente extends Pessoa {
   
-    private int id;
-    private String nome;
-    private char sexo;
-    private Date dtNascimento;
-    private String telefone;
-    private String email;
-    private String rg;
+  //classe cliente tem somente endereco e cep, pois esta recebendo os outros
+  //dados da classe pessoa
     private String endereco;
     private String cep;
 
-    //criando o construtor dos atributos do cliente
-    public Cliente(int id, String nome, char sexo, Date dtNascimento, String telefone, String email, String rg, String endereco, String cep) {
-        this.id = id;
-        this.nome = nome;
-        this.sexo = sexo;
-        this.dtNascimento = dtNascimento;
-        this.telefone = telefone;
-        this.email = email;
-        this.rg = rg;
+    //atraves deste construtor ele chama o super construtor da classe Pessoa(pai)
+    public Cliente( int id, String nome, char sexo, String dtNascimento, String telefone, String email, String rg, String endereco, String cep) {
+        super(id, nome, sexo, dtNascimento, telefone, email, rg);
         this.endereco = endereco;
         this.cep = cep;
     }
-//outro constrtutor para limitar os atributos no cadastro do cliente
-    public Cliente(int id, String nome, char sexo, String telefone, String endereco) {
-        this.id = id;
-        this.nome = nome;
-        this.sexo = sexo;
-        this.telefone = telefone;
+    
+    //gerar um cliente com apenas id, nome, cep e endereco
+    public Cliente(int id, String nome, String endereco, String cep) {
+        super(id, nome);
+        this.endereco = endereco;
+        this.cep = cep;
+    }
+
+    
+    
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
-    public Cliente() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    //acesso de fora
-    public int getId() {
-        return id;
+    public String getCep() {
+        return cep;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-
-    public Date getDtNascimento() {
-        return dtNascimento;
-    }
-
-    public void setDtNascimento(Date dtNascimento) {
-        this.dtNascimento = dtNascimento;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getTelefone() {
@@ -96,29 +65,9 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getRg() {
-        return rg;
-    }
+    
 
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
     
     
     

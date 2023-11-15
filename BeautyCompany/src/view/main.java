@@ -4,7 +4,9 @@
  */
 package view;
 
+import model.Agendamento;
 import model.Cliente;
+import model.Pessoa;
 import model.Servico;
 import model.Usuario;
 
@@ -22,12 +24,15 @@ public class main {
         System.out.println(corte.getDescricao());
         System.out.println(corte.getValor());
         
-        Cliente cliente = new Cliente(1, "bea", 'F', "998323455", "Rua sobe e desce numero desaparece");
-        System.out.println(cliente);
+        Cliente cliente = new Cliente(2, "Ana", "Rua sobe e desce numero desaparece", "11404521");
+        System.out.println(cliente.getNome());
         
         
         Usuario usuario = new Usuario(1, "Luiz", "Luiz123");
-        System.out.println(usuario);
+        System.out.println(usuario.getNome());
+        
+        Agendamento agendamento = new Agendamento(1, cliente, corte, 30, "27/11/2023 09:15");
+        
     }
     
     
