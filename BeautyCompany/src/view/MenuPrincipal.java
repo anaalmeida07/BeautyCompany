@@ -5,17 +5,22 @@
  */
 package view;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author Fatec
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        this.controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -27,7 +32,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton3 = new javax.swing.JToggleButton();
+        Agendamento = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
         jToggleButton6 = new javax.swing.JToggleButton();
@@ -36,17 +41,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton3.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jToggleButton3.setSelected(true);
-        jToggleButton3.setText("Agendamento");
-        jToggleButton3.setBorderPainted(false);
-        jToggleButton3.setContentAreaFilled(false);
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        Agendamento.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        Agendamento.setSelected(true);
+        Agendamento.setText("Agendamento");
+        Agendamento.setBorderPainted(false);
+        Agendamento.setContentAreaFilled(false);
+        Agendamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                AgendamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 340, 260, 40));
+        getContentPane().add(Agendamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 340, 260, 40));
 
         jToggleButton4.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jToggleButton4.setSelected(true);
@@ -90,9 +95,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    private void AgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendamentoActionPerformed
+        this.controller.navegarParaAgenda();
+    }//GEN-LAST:event_AgendamentoActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
@@ -142,8 +147,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Agendamento;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToggleButton jToggleButton6;
