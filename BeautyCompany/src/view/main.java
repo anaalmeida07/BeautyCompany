@@ -28,11 +28,15 @@ public class main {
         System.out.println(cliente.getNome());
         
         
-        Usuario usuario = new Usuario(1, "Luiz", "Luiz123");
+        Usuario usuario = new Usuario(1, "manicure", "Luiz123");
         System.out.println(usuario.getNome());
         
         Agendamento agendamento = new Agendamento(1, cliente, corte, 30, "27/11/2023 09:15");
-        
+        System.out.println(agendamento.getCliente().getNome());
+                
+                
+                
+                
     }
     
     
