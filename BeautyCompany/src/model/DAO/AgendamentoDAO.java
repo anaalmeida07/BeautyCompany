@@ -28,6 +28,8 @@ public class AgendamentoDAO {
         
         
     }
+
+  
     
     /**
      * Atualiza um Objeto no banco de dados
@@ -83,8 +85,9 @@ public class AgendamentoDAO {
         
         int maiorId = 0;
         
-        for (Object agendamento : Banco.agendamento) {           
-           int id = agendamento.getId();
+        for (Agendamento agendamento : Banco.agendamento) {           
+           int id;
+            id = agendamento.getId();
             
             if(maiorId < id){
                 maiorId = id;
