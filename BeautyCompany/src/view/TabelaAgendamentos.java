@@ -4,17 +4,30 @@
  */
 package view;
 
+import Controller.AgendaController;
+import Controller.VoltarController;
+import javax.swing.JTable;
+
 /**
  *
  * @author lmene
  */
 public class TabelaAgendamentos extends javax.swing.JFrame {
 
+    private final AgendaController controller;
+    private final VoltarController controller1;
+    
+
     /**
      * Creates new form TabelaAgendamentos
      */
     public TabelaAgendamentos() {
         initComponents();
+        controller =  new AgendaController(this);
+        this.controller1 = new VoltarController(this);
+        
+        iniciar();
+         
     }
 
     /**
@@ -27,42 +40,47 @@ public class TabelaAgendamentos extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelaAgendamentos = new javax.swing.JTable();
+        voltar = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaAgendamentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "serviço", "Title 2", "Title 3", "Title 4"
+                "Id", "Cliente", "Serviço", "Valor", "Data", "Hora"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TabelaAgendamentos);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 140, 890, 440));
+
+        voltar.setBackground(new java.awt.Color(254, 254, 250));
+        voltar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        voltar.setText("Voltar");
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 610, 150, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/TabelaAgendamento.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -90, 1530, 900));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        this.controller1.voltarParaAgenda();
+    }//GEN-LAST:event_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,7 +118,25 @@ public class TabelaAgendamentos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelaAgendamentos;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JToggleButton voltar;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar() {
+      this.controller.AtualizaTabela();
+    }
+
+    public JTable getjTable1() {
+        return TabelaAgendamentos;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.TabelaAgendamentos = jTable1;
+    }
+    
+    
+    
+    
 }

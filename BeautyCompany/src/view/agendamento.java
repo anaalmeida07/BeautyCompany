@@ -4,17 +4,36 @@
  */
 package view;
 
+import Controller.TabelaController;
+import Controller.VoltarController;
+import Controller.agendamentoController;
+import Controller.agendamentoController;
+import javax.swing.JComboBox;
+
+
 /**
  *
  * @author lmene
  */
 public class agendamento extends javax.swing.JFrame {
 
+    private final TabelaController controller;
+    private final agendamentoController controller2;
+    
+    
+
     /**
      * Creates new form agendamento
      */
     public agendamento() {
         initComponents();
+        this.controller = new TabelaController(this);
+         this.controller2 = new agendamentoController(this);
+    
+        iniciar1();
+        
+        
+        
     }
 
     /**
@@ -31,8 +50,8 @@ public class agendamento extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cliente = new javax.swing.JComboBox<>();
+        servico = new javax.swing.JComboBox<>();
         jTextField4 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -65,6 +84,11 @@ public class agendamento extends javax.swing.JFrame {
 
         jTextField2.setBackground(new java.awt.Color(254, 254, 250));
         jTextField2.setText("jTextField1");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 290, 40));
 
         jTextField5.setBackground(new java.awt.Color(254, 254, 250));
@@ -76,13 +100,21 @@ public class agendamento extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 290, 40));
 
-        jComboBox2.setBackground(new java.awt.Color(254, 254, 250));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 290, 40));
+        cliente.setBackground(new java.awt.Color(254, 254, 250));
+        cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 290, 40));
 
-        jComboBox3.setBackground(new java.awt.Color(254, 254, 250));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 290, 40));
+        servico.setBackground(new java.awt.Color(254, 254, 250));
+        servico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                servicoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(servico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 290, 40));
 
         jTextField4.setBackground(new java.awt.Color(254, 254, 250));
         jTextField4.setText("jTextField1");
@@ -107,7 +139,7 @@ public class agendamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        this.controller.navegarParaAgenda();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -121,6 +153,18 @@ public class agendamento extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clienteActionPerformed
+
+    private void servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_servicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,10 +202,9 @@ public class agendamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cliente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
@@ -169,5 +212,30 @@ public class agendamento extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JComboBox<String> servico;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar1() {
+       this.controller2.atualizaCliente();
+    }
+
+    public JComboBox<String> getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(JComboBox<String> cliente) {
+        this.cliente = cliente;
+    }
+
+    public JComboBox<String> getServico() {
+        return servico;
+    }
+
+    public void setServico(JComboBox<String> servico) {
+        this.servico = servico;
+    }
+
+   
+
+    
 }
