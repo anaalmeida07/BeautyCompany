@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import model.Agendamento;
 import model.Cliente;
 import model.Servico;
+
 import view.agendamento;
 
 
@@ -24,14 +25,14 @@ import view.agendamento;
 
 public class agendamentoController {
     private final agendamento view;
-    private final agendamentoHelper helper1;
-    private final AgendaController helper2;
+    private final agendamentoHelper helper;
+   
 
 
     public agendamentoController(agendamento view) {
         this.view = view;
-        this.helper1 = new agendamentoHelper(view);
-        this.helper2 = new AgendaController(view);
+        this.helper = new agendamentoHelper(view);
+         
         
     }
 
@@ -41,7 +42,7 @@ public class agendamentoController {
         ArrayList<Cliente> clientes = clienteDAO.selectAll();
         
         //exibir clientes no combobox cliente
-        helper1.preencherClientes(clientes);
+        helper.preencherClientes(clientes);
         
   
     }  
@@ -49,25 +50,15 @@ public class agendamentoController {
     public void atualizaServico(){
         ServicoDAO servicoDAO = new ServicoDAO();
         ArrayList<Servico> servicos = servicoDAO.selectAll();
-        helper1.preencherServicos(servicos);
+        helper.preencherServicos(servicos);
         
     }
     
     public void atualizaValor(){
-        Servico servico = helper1.obterServico();
-        helper1.setarValor(servico.getValor());
+        Servico servico = helper.obterServico();
+        helper.setarValor(servico.getValor());
         
     }
     
-    public void agendar(){
-        //buscar objeto agendamento da tela
-        Agendamento agendamento = helper1.obterModelo();
-        //salvar objeto no banco de dados 
-        new AgendamentoDAO().insert(agendamento);
-        //inserir elemento na tabela 
-        helper2.AtualizaTabela();
-        helper1.limparTela();
-        
-    }
-            
+    
 }

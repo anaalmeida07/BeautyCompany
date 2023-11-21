@@ -5,6 +5,7 @@
 package Controller.Helper;
 
 
+import Controller.AgendaController;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import model.Agendamento;
@@ -20,9 +21,15 @@ import view.agendamento;
  */
 public class agendamentoHelper implements IHelper { //obrigatoriamente deve se criar os metodos abstratos 
     private final agendamento view;
+    private final AgendaController helper;
+    
+    
 
     public agendamentoHelper(agendamento view) {
         this.view = view;
+        this.helper = new AgendaController(view);
+        
+        
     }   
 
 
