@@ -25,11 +25,13 @@ import view.agendamento;
 public class agendamentoController {
     private final agendamento view;
     private final agendamentoHelper helper1;
+    private final AgendaController helper2;
 
 
     public agendamentoController(agendamento view) {
         this.view = view;
         this.helper1 = new agendamentoHelper(view);
+        this.helper2 = new AgendaController(view);
         
     }
 
@@ -63,7 +65,8 @@ public class agendamentoController {
         //salvar objeto no banco de dados 
         new AgendamentoDAO().insert(agendamento);
         //inserir elemento na tabela 
-        atualiza
+        helper2.AtualizaTabela();
+        helper1.limparTela();
         
     }
             
