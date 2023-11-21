@@ -65,7 +65,11 @@ public class Cliente extends Pessoa {
         this.email = email;
     }
 
+    @Override //subscreve o to string
     
+    public String toString(){
+        return getNome();
+    }
 
 
     

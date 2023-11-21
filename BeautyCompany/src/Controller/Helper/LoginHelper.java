@@ -11,7 +11,7 @@ import view.Login;
  *
  * @author crist
  */
-public class LoginHelper {
+public class LoginHelper implements IHelper { //
     //os helpers o que pega os dados da tela e transforma em um modelo ou um modelo em dados na tela
     private final Login view;
 

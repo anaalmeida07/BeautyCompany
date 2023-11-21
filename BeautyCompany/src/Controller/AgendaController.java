@@ -27,6 +27,10 @@ public class AgendaController {
         this.view = view;
         this.helper = new AgendaHelper(view);
     }
+
+    AgendaController() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
    
     
     public void AtualizaTabela(){
@@ -41,6 +45,5 @@ public class AgendaController {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-  
     
 }

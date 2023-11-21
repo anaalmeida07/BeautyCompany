@@ -46,5 +46,10 @@ public class Servico {
         this.id = id;
     }
     
+    @Override //subscreve o to string
+    
+    public String toString(){
+        return getDescricao();
+    }
     
 }
