@@ -20,7 +20,7 @@ import view.agendamento;
  *
  * @author crist
  */
-public class AgendaHelper {
+public class AgendaHelper implements IHelper{
     private final agendamento view;
     
  
@@ -70,10 +70,12 @@ public class AgendaHelper {
             
         }
     }
-    
-     public Cliente obterCliente(){
-     return (Cliente) view.getCliente().getSelectedItem();
+    /*obter um cliente, retornando uma instancia cliente 
+    pegando o item selecionado do jcombobox cliente, transforma
+   em um objeto cliente*/
         
+     public Cliente obterCliente(){
+     return (Cliente) view.getCliente().getSelectedItem(); 
     }
 
     public Servico obterServico(){
@@ -85,7 +87,7 @@ public class AgendaHelper {
         view.getValor().setText(valor+" "); //se concatenar um valor com string ela transforma tudo em string
         
     }
-
+@Override
     public Agendamento obterModelo() { //polimorfismo : quando a classe pode ter varias formas
         String idString = view.getId().getText();
         int id = Integer.parseInt(idString); //converte em inteiro
@@ -101,17 +103,18 @@ public class AgendaHelper {
         
         String observacao = view.getObservacao().getText();
         
+        //O objeto agendamento contempla tudo o que o usuario colocar 
         Agendamento agendamento = new Agendamento(id, cliente, servico, valor, dataHora, observacao);
         return agendamento;
        // new Agendamento();
     }
 
-
+@Override // subscreve 
     public void limparTela() {
-       view.getId().setText(" ");
-       view.getHora().setText(" ");
-       view.getData().setText(" ");
-       view.getObservacao().setText(" ");
+       view.getId().setText("0");
+       view.getHora().setText("");
+       view.getData().setText("");
+       view.getObservacao().setText("");
     }
 
     

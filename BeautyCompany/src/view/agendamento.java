@@ -56,6 +56,7 @@ public class agendamento extends javax.swing.JFrame {
         hora = new javax.swing.JTextField();
         tabelAgendamento = new javax.swing.JScrollPane();
         tabelaAgendamento = new javax.swing.JTable();
+        voltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         observacao = new javax.swing.JTextArea();
         fundo = new javax.swing.JLabel();
@@ -134,6 +135,15 @@ public class agendamento extends javax.swing.JFrame {
 
         getContentPane().add(tabelAgendamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 610, 380));
 
+        voltar.setBackground(new java.awt.Color(254, 254, 250));
+        voltar.setText("voltar");
+        voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 610, 300, 40));
+
         observacao.setBackground(new java.awt.Color(254, 254, 250));
         observacao.setColumns(20);
         observacao.setRows(5);
@@ -174,6 +184,10 @@ public class agendamento extends javax.swing.JFrame {
     private void servicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_servicoItemStateChanged
         this.controller.atualizaValor();
     }//GEN-LAST:event_servicoItemStateChanged
+
+    private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
+        this.controller.navegarParaMenu();
+    }//GEN-LAST:event_voltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +237,7 @@ public class agendamento extends javax.swing.JFrame {
     private javax.swing.JScrollPane tabelAgendamento;
     private javax.swing.JTable tabelaAgendamento;
     private javax.swing.JTextField valor;
+    private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 
     private void iniciar() {

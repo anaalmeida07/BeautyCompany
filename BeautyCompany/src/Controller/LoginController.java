@@ -51,10 +51,10 @@ public class LoginController {
         
     }
     
-    public void fizTarefa(){
+   /* public void fizTarefa(){
         System.out.print("Busquei algo do BD");
         this.view.exibeMensagem("Executei o fiz Tarefa");
     }
-    
+    */
     
 }
