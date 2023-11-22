@@ -53,7 +53,6 @@ public class Login extends javax.swing.JFrame {
 
         TextUsuario.setBackground(new java.awt.Color(254, 254, 250));
         TextUsuario.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        TextUsuario.setText("jTextField1");
         TextUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         TextUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +61,6 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 280, 40));
 
-        TextSenha.setText("jPasswordField1");
         TextSenha.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 280, 40));
 

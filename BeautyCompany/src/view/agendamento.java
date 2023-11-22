@@ -5,10 +5,12 @@
 package view;
 
 import Controller.AgendaController;
-import Controller.agendamentoController;
-import Controller.agendamentoController;
-import Controller.agendamentoController;
+//import Controller.agendamentoController;
+//import Controller.agendamentoController;
+//import Controller.agendamentoController;
+import java.text.SimpleDateFormat;
 import javax.swing.JComboBox;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -52,17 +54,16 @@ public class agendamento extends javax.swing.JFrame {
         cliente = new javax.swing.JComboBox<>();
         servico = new javax.swing.JComboBox<>();
         hora = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        tabelAgendamento = new javax.swing.JScrollPane();
         tabelaAgendamento = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         observacao = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        fundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         valor.setBackground(new java.awt.Color(254, 254, 250));
-        valor.setText("jTextField1");
         getContentPane().add(valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 290, 40));
 
         concluir.setBackground(new java.awt.Color(254, 254, 250));
@@ -75,7 +76,6 @@ public class agendamento extends javax.swing.JFrame {
         getContentPane().add(concluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 550, 150, 40));
 
         id.setBackground(new java.awt.Color(254, 254, 250));
-        id.setText("jTextField1");
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idActionPerformed(evt);
@@ -84,7 +84,6 @@ public class agendamento extends javax.swing.JFrame {
         getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 290, 40));
 
         data.setBackground(new java.awt.Color(254, 254, 250));
-        data.setText("jTextField1");
         data.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dataActionPerformed(evt);
@@ -114,7 +113,6 @@ public class agendamento extends javax.swing.JFrame {
         getContentPane().add(servico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 290, 40));
 
         hora.setBackground(new java.awt.Color(254, 254, 250));
-        hora.setText("jTextField1");
         hora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 horaActionPerformed(evt);
@@ -124,18 +122,17 @@ public class agendamento extends javax.swing.JFrame {
 
         tabelaAgendamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "CLIENTE", "SERVIÇO", "VALOR", "DATA", "HORA", "OBSERVAÇÃO"
             }
         ));
-        jScrollPane2.setViewportView(tabelaAgendamento);
+        tabelAgendamento.setViewportView(tabelaAgendamento);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 500, 380));
+        getContentPane().add(tabelAgendamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 610, 380));
 
         observacao.setBackground(new java.awt.Color(254, 254, 250));
         observacao.setColumns(20);
@@ -144,14 +141,14 @@ public class agendamento extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 560, 230));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/agendamento.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, 1420, 880));
+        fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/agendamento.png"))); // NOI18N
+        getContentPane().add(fundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, 1420, 880));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void concluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concluirActionPerformed
-      // this.controller2.agendar();
+      this.controller.agendar();
     }//GEN-LAST:event_concluirActionPerformed
 
     private void horaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horaActionPerformed
@@ -175,7 +172,7 @@ public class agendamento extends javax.swing.JFrame {
     }//GEN-LAST:event_servicoActionPerformed
 
     private void servicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_servicoItemStateChanged
-        //this.controller2.atualizaValor();
+        this.controller.atualizaValor();
     }//GEN-LAST:event_servicoItemStateChanged
 
     /**
@@ -217,22 +214,34 @@ public class agendamento extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cliente;
     private javax.swing.JButton concluir;
     private javax.swing.JTextField data;
+    private javax.swing.JLabel fundo;
     private javax.swing.JTextField hora;
     private javax.swing.JTextField id;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea observacao;
     private javax.swing.JComboBox<String> servico;
+    private javax.swing.JScrollPane tabelAgendamento;
     private javax.swing.JTable tabelaAgendamento;
     private javax.swing.JTextField valor;
     // End of variables declaration//GEN-END:variables
 
     private void iniciar() {
-    //   this.controller.atualizaCliente();
-      // this.controller.atualizaServico();
-      this.controller.AtualizaTabela();
+    this.controller.AtualizaTabela();
+    this.controller.atualizaCliente();
+    this.controller.atualizaServico();
+    this.controller.atualizaValor();
+    
+    
     }
+
+    public JTable getTabelaAgendamento() {
+        return tabelaAgendamento;
+    }
+
+    public void setTabelaAgendamento(JTable tabelaAgendamento) {
+        this.tabelaAgendamento = tabelaAgendamento;
+    }
+    
 
     public JComboBox<String> getCliente() {
         return cliente;
@@ -264,6 +273,12 @@ public class agendamento extends javax.swing.JFrame {
 
     public void setData(JTextField data) {
         this.data = data;
+    }
+    public String getDataFormatada(){
+        return new SimpleDateFormat("dd/MM/yyyy").format(data);
+    }
+    public String getHoraFormatada(){
+        return new SimpleDateFormat("HH:mm").format(data);
     }
 
     public JTextField getHora() {

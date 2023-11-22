@@ -5,14 +5,14 @@
 package Controller;
 
 import Controller.Helper.AgendaHelper;
-import Controller.Helper.agendamentoHelper;
 import Model.DAO.AgendamentoDAO;
 import Model.DAO.ClienteDAO;
+import Model.DAO.ServicoDAO;
 import java.util.ArrayList;
 import model.Agendamento;
 import model.Cliente;
+import model.Servico;
 
-import Controller.agendamentoController;
 import view.agendamento;
 
 
@@ -39,23 +39,49 @@ public class AgendaController {
         // exibir esta lista na view 
         helper.preencherTabela(agendamentos);
     }     
+    
+     public void atualizaCliente(){
+        //Buscar clientes do banco de dados 
+        ClienteDAO clienteDAO = new ClienteDAO();
+        ArrayList<Cliente> clientes = clienteDAO.selectAll();
+        
+        //exibir clientes no combobox cliente
+        helper.preencherClientes(clientes);
+        
+  
+    }  
+    
+    public void atualizaServico(){
+        ServicoDAO servicoDAO = new ServicoDAO();
+        ArrayList<Servico> servicos = servicoDAO.selectAll();
+        helper.preencherServicos(servicos);
+        
+    }
+    
+    public void atualizaValor(){
+        Servico servico = helper.obterServico();
+        helper.setarValor(servico.getValor());
+        
+    }
+    
+    
  
-    public void navegarParaAgenda() {
+   /*public void navegarParaAgenda() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    
+    */
         
     public void agendar(){
         //buscar objeto agendamento da tela
-       // Agendamento agendamento = helper.obterModelo();
+       Agendamento agendamento = helper.obterModelo();
         //salvar objeto no banco de dados 
-       // new AgendamentoDAO().insert(agendamento);
+       new AgendamentoDAO().insert(agendamento);
         //inserir elemento na tabela 
-       // helper.AtualizaTabela();
-       // helper.limparTela();
+       AtualizaTabela();
+       helper.limparTela();
         
     }
            
-    
+   
 }
