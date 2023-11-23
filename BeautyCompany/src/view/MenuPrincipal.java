@@ -33,12 +33,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         Agendamento = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agendamento.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
@@ -51,43 +48,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 AgendamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(Agendamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 340, 260, 40));
-
-        jToggleButton4.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jToggleButton4.setSelected(true);
-        jToggleButton4.setText("Cadastro");
-        jToggleButton4.setBorderPainted(false);
-        jToggleButton4.setContentAreaFilled(false);
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 190, 40));
-
-        jToggleButton5.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jToggleButton5.setSelected(true);
-        jToggleButton5.setText("Usuário");
-        jToggleButton5.setBorderPainted(false);
-        jToggleButton5.setContentAreaFilled(false);
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 190, 40));
-
-        jToggleButton6.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jToggleButton6.setSelected(true);
-        jToggleButton6.setText("Serviços");
-        jToggleButton6.setBorderPainted(false);
-        jToggleButton6.setContentAreaFilled(false);
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 340, 190, 40));
+        getContentPane().add(Agendamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, 260, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/MenuPrincipal.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -98,18 +59,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void AgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendamentoActionPerformed
         this.controller.navegarParaAgenda();
     }//GEN-LAST:event_AgendamentoActionPerformed
-
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
-
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
-
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,8 +98,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Agendamento;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
     // End of variables declaration//GEN-END:variables
 }

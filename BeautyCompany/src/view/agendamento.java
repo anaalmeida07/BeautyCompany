@@ -5,23 +5,23 @@
 package view;
 
 import Controller.AgendaController;
-//import Controller.agendamentoController;
-//import Controller.agendamentoController;
-//import Controller.agendamentoController;
+import Controller.Voltar;
 import java.text.SimpleDateFormat;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
+import view.MenuPrincipal;
 
 /**
  *
- * @author lmene
+ * @author crist
  */
 public class agendamento extends javax.swing.JFrame {
 
     private final AgendaController controller;
+    private final Voltar controller1;
+    
     
     
 
@@ -31,6 +31,8 @@ public class agendamento extends javax.swing.JFrame {
     public agendamento() {
         initComponents();
         controller = new AgendaController(this);
+        MenuPrincipal MenuPrincipal = null;
+        this.controller1 = new Voltar(MenuPrincipal);
 
         iniciar();
         
@@ -186,7 +188,7 @@ public class agendamento extends javax.swing.JFrame {
     }//GEN-LAST:event_servicoItemStateChanged
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-        this.controller.navegarParaMenu();
+       this.controller1.navegarParaMenu();
     }//GEN-LAST:event_voltarActionPerformed
 
     /**

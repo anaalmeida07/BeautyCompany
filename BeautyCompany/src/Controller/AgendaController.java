@@ -64,14 +64,6 @@ public class AgendaController {
         
     }
     
-    
- 
-   /*public void navegarParaAgenda() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    */
-        
     public void agendar(){
         //buscar objeto agendamento da tela
        Agendamento agendamento = helper.obterModelo();
@@ -83,9 +75,7 @@ public class AgendaController {
         
     }
 
-    public void navegarParaMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
            
    
 }
