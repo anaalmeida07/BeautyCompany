@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import java.sql.SQLException;
 import model.Agendamento;
 import view.MenuPrincipal;
 import view.agendamento;
@@ -20,8 +21,9 @@ public class MenuPrincipalController {
         this.view = view;
     }
     
-    public void navegarParaAgenda(){
+      public void navegarParaAgenda() throws SQLException{
         agendamento agenda = new agendamento();
         agenda.setVisible(true);
+        this.view.dispose();
     }
 }

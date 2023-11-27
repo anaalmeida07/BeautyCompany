@@ -21,6 +21,7 @@ public class agendamento extends javax.swing.JFrame {
 
     private final AgendaController controller;
     private final Voltar controller1;
+    private MenuPrincipal view;
     
     
     
@@ -31,8 +32,8 @@ public class agendamento extends javax.swing.JFrame {
     public agendamento() {
         initComponents();
         controller = new AgendaController(this);
-        MenuPrincipal MenuPrincipal = null;
-        this.controller1 = new Voltar(MenuPrincipal);
+        this.view = view;
+        this.controller1 = new Voltar(view);
 
         iniciar();
         

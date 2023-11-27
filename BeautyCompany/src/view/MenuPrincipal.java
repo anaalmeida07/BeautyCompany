@@ -6,6 +6,9 @@
 package view;
 
 import Controller.MenuPrincipalController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -35,7 +38,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Agendamento = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agendamento.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
@@ -57,7 +60,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendamentoActionPerformed
-        this.controller.navegarParaAgenda();
+        try {
+            this.controller.navegarParaAgenda();
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_AgendamentoActionPerformed
 
     /**

@@ -91,6 +91,11 @@ public class AgendaHelper implements IHelper{
     public Agendamento obterModelo() { //polimorfismo : quando a classe pode ter varias formas
         String idString = view.getId().getText();
         int id = Integer.parseInt(idString); //converte em inteiro
+
+        if (!idString.trim().isEmpty()) {
+            id = Integer.parseInt(idString);
+        }
+
         Cliente cliente = obterCliente();
         Servico servico = obterServico();
         
