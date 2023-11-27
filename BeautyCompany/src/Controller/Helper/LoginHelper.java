@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller.Helper;
-
+//criado para auxiliar os controllers, fornecendo
 import model.Usuario;
 import view.Login;
 

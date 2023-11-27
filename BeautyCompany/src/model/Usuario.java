@@ -12,13 +12,14 @@ import java.util.Date;
  */
 public class Usuario extends Pessoa {
     
-    
+    //atributos necessários para diferenciar um usuario de cliente
     protected String senha;
     protected String nivelAcesso;
 
+    //construtor = feito para iniciar o objeto, utilizando as caracteristicas definidas
     public Usuario( int id, String nome, String senha) {
         super(id, nome);
-        this.senha = senha;
+        this.senha = senha; //esse construtor diz que para criar um usuario precisa de d, nome e senha
     }
 
     public Usuario(int id, String nome,char sexo,  String dtNascimento, String telefone, String email, String rg, String senha, String nivelAcesso) {
@@ -26,7 +27,7 @@ public class Usuario extends Pessoa {
         this.senha = senha;
         this.nivelAcesso = nivelAcesso;
     }
-
+//getters e setters para pegar e definir informações das variaveis
     public String getSenha() {
         return senha;
     }

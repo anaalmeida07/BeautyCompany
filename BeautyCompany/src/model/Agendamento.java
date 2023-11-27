@@ -29,6 +29,7 @@ public class Agendamento {
         this.servico = servico;
         this.valor = valor;
         //transformar a variavel data em string e continuar usando as vantagens do date
+        //vantagem: facilita na manipulação da variavel 
         if (!data.trim().isEmpty()) {
         try {
             this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);

@@ -5,7 +5,7 @@
  */
 package view;
 
-import Controller.LoginController;
+import Controller.LoginController; //controller do login, ou seja organiza o fluxo do sistema
 import Model.DAO.Banco;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -59,20 +59,20 @@ public class Login extends javax.swing.JFrame {
                 TextUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 280, 40));
+        getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 280, 40));
 
         TextSenha.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 280, 40));
+        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 280, 40));
 
         UsuarioField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         UsuarioField.setForeground(new java.awt.Color(254, 254, 250));
         UsuarioField.setText("Usuário");
-        getContentPane().add(UsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 70, 30));
+        getContentPane().add(UsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 70, 30));
 
         SenhaField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         SenhaField.setForeground(new java.awt.Color(254, 254, 250));
         SenhaField.setText("Senha");
-        getContentPane().add(SenhaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 70, 20));
+        getContentPane().add(SenhaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 70, 20));
 
         jButton1.setBackground(new java.awt.Color(254, 254, 250));
         jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -84,13 +84,13 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, 120, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 120, 40));
 
         Painel.setBackground(new java.awt.Color(254, 254, 250));
         Painel.setForeground(new java.awt.Color(254, 254, 250));
-        Painel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/loginBeautyComp.png"))); // NOI18N
+        Painel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/Frame 3 (1).png"))); // NOI18N
         Painel.setText("jLabel2");
-        getContentPane().add(Painel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 1280, 670));
+        getContentPane().add(Painel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 670));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,7 +113,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_TextUsuarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // executar  quando clicar no botão
+        // executar o login (no controller) quando clicar no botão
         this.controller.entrarNoSistema();
        
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -165,8 +165,12 @@ public class Login extends javax.swing.JFrame {
 
     public void exibeMensagem(String mensagem) {
         JOptionPane.showMessageDialog(null, mensagem);
+        //exibir uma mensagem na tela do usuário, exemplo: concluido com sucesso
                
     }
+    //getters e setters: pegar as informações de uma variavel e/ou defini-las.
+    //usado quando precisão dos dados fora da classe
+    
     //para acessar os campos no login controller
     public JPasswordField getTextSenha() {
         return TextSenha;

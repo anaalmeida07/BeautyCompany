@@ -18,10 +18,10 @@ import view.MenuPrincipal;
  * @author crist
  */
 public class agendamento extends javax.swing.JFrame {
-
+   // classes importantes para o funcionamento do agedamento
     private final AgendaController controller;
     private final Voltar controller1;
-    private MenuPrincipal view;
+    private MenuPrincipal view; //necessária pois o botão voltar redicionará para esta view
     
     
     
@@ -161,7 +161,7 @@ public class agendamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void concluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concluirActionPerformed
-      this.controller.agendar();
+      this.controller.agendar(); //botão de concluir, ou seja, vai fazer o agendamento no controller agendar
     }//GEN-LAST:event_concluirActionPerformed
 
     private void horaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horaActionPerformed
@@ -189,7 +189,7 @@ public class agendamento extends javax.swing.JFrame {
     }//GEN-LAST:event_servicoItemStateChanged
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-       this.controller1.navegarParaMenu();
+       this.controller1.navegarParaMenu(); //botão voltar, que vai para a tela de menu novamente
     }//GEN-LAST:event_voltarActionPerformed
 
     /**
@@ -251,7 +251,10 @@ public class agendamento extends javax.swing.JFrame {
     
     
     }
-
+    //getters e setters: pegar as informações de uma variavel e/ou defini-las.
+    //usado quando precisão dos dados fora da classe
+    
+    
     public JTable getTabelaAgendamento() {
         return tabelaAgendamento;
     }
